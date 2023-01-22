@@ -96,7 +96,9 @@ export default function Home() {
 					/>
 				</div>
 			</main>
-			<footer></footer>
+			<footer className={inter.className}>
+				Total of {memes.length} kick-ass funny memes.
+			</footer>
 		</>
 	);
 }
