@@ -7,7 +7,7 @@ import PhotoAlbum from "react-photo-album";
 // import photos from "./photos";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { supabase } from "./supabase";
+import { supabase } from "../lib/supabase";
 
 // import optional lightbox plugins
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
