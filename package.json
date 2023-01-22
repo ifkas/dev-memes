@@ -9,11 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@next/font": "13.1.2",
+    "@supabase/auth-helpers-nextjs": "^0.5.2",
+    "@supabase/auth-helpers-react": "^0.3.1",
+    "@supabase/auth-ui-react": "^0.2.6",
+    "@supabase/supabase-js": "^2.4.0",
+    "@table-library/react-table-library": "^4.0.23",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",
     "next": "13.1.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-photo-album": "^2.0.0",
+    "uuid": "^9.0.0",
+    "yet-another-react-lightbox": "^2.2.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21"
   }
 }
