@@ -18,14 +18,15 @@ import {
 import { usePagination } from "@table-library/react-table-library/pagination";
 import { useTheme } from "@table-library/react-table-library/theme";
 import { getTheme } from "@table-library/react-table-library/baseline";
+import Image from "next/image";
 
 // https://vvgskppmennronkqbstj.supabase.co/storage/v1/object/public/memes/c33a1a4b-e60b-4637-aeba-c329493955b3/031ee747-2ef2-419d-a630-7c870cb49f52
 // URL of the CDN + user.id + uuid image name
 const CDNmeme =
 	"https://vvgskppmennronkqbstj.supabase.co/storage/v1/object/public/memes/";
 
-const theme = useTheme(getTheme());
 const Login = () => {
+	const theme = useTheme(getTheme());
 	const session = useSession();
 	const supabase = useSupabaseClient();
 	const user = useUser();
@@ -149,9 +150,11 @@ const Login = () => {
 												<Row key={meme.id} item={meme}>
 													<Cell>
 														{" "}
-														<img
+														<Image
 															src={CDNmeme + user.id + "/" + meme.name}
-															width='150'
+															width={150}
+															height={150}
+															alt={meme.name}
 														/>
 													</Cell>
 													<Cell>{meme.name}</Cell>
@@ -194,7 +197,7 @@ const Login = () => {
 							</div>
 						</>
 					) : (
-						<p>No memes yet, add some, don't be shy!</p>
+						<p>No memes yet, add some, don&apos;t be shy!</p>
 					)}
 				</div>
 			)}
