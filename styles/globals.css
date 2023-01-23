@@ -416,22 +416,20 @@ form {
   background: linear-gradient(0deg, rgba(250,131,93,1) 4%,  rgba(250,93,93,1) 100%); */
   border-color: #1C0D7C;
 }
-.css-1kzm8u5-CELL_CONTAINER_STYLE-Cell {
+.tr-header .th:first-child > div {
+  padding-left: 10px;
+}
+.tr-header .th {
+  background-color: #000316 !important;
+  color: #fff;
+}
+.tr-header .th .td {
   text-align: center;
   background-color: #000316 !important;
   color: #fff;
-}
-.css-ag01b6-getHeaderRowContainerStyle-HeaderRow .css-uo1l5p-HEADER_CELL_CONTAINER_STYLE-HeaderCell:first-child >div {
-  padding-left: 10px;
-}
-.css-uo1l5p-HEADER_CELL_CONTAINER_STYLE-HeaderCell {
-  background-color: #000316 !important;
-  color: #fff;
-}
-.css-1kzm8u5-CELL_CONTAINER_STYLE-Cell {
   font-size: 14px;
 }
-.css-1kzm8u5-CELL_CONTAINER_STYLE-Cell>div {
+.tr-header .th .td>div {
   overflow: visible !important;
 }
 footer {
