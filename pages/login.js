@@ -21,7 +21,6 @@ import { useTheme } from "@table-library/react-table-library/theme";
 import { getTheme } from "@table-library/react-table-library/baseline";
 import Image from "next/image";
 
-// https://vvgskppmennronkqbstj.supabase.co/storage/v1/object/public/memes/c33a1a4b-e60b-4637-aeba-c329493955b3/031ee747-2ef2-419d-a630-7c870cb49f52
 // URL of the CDN + user.id + uuid image name
 const CDNmeme =
 	"https://vvgskppmennronkqbstj.supabase.co/storage/v1/object/public/memes/";
@@ -35,7 +34,6 @@ const Login = () => {
 	const user = useUser();
 	const [memes, setMemes] = useState([]);
 	const data = { nodes: memes };
-	// console.log(data);
 
 	async function getMemes(pagination) {
 		const { data, error } = await supabase.storage
@@ -62,7 +60,7 @@ const Login = () => {
 	const pagination = usePagination(data, {
 		state: {
 			page: 0,
-			size: 10,
+			size: 14,
 		},
 	});
 

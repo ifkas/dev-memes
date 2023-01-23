@@ -398,7 +398,7 @@ form {
 
 /* Custom */
 .devmemeslogo {
-  background: url(../public/devememes3.jpg) no-repeat center center;
+  background: url(../public/devememeslogo7.jpg) no-repeat center center;
   height: 700px;
   background-size: cover;
 }
@@ -445,12 +445,16 @@ footer {
 span.paginated {
   color: #000316;
 }
-#auth-sign-in, #auth-sign-up {
+#auth-sign-in, 
+#auth-sign-up, 
+#auth-forgot-password {
   max-width: 500px;
   margin: 0 auto;
   margin-top: 70px;
 }
-#auth-sign-in label, #auth-sign-up label { 
+#auth-sign-in label, 
+#auth-sign-up label, 
+#auth-forgot-password label { 
   display: none;
 }
 @media only screen and (max-width: 790px) {
@@ -458,19 +462,19 @@ span.paginated {
     height: 300px;
   }
 }
-.c-kdzhTC-fsSXPQ-color-primary {
+.supabase-ui-auth_ui-button {
   color: var(--colors-brandButtonText);
   border-color: var(--colors-brandAccent);
   background-image: linear-gradient(to right, #e53935 0%, #e35d5b  51%, #e53935  100%);
   transition: 0.5s;
   background-size: 200% auto;
 }
-.c-kdzhTC-fsSXPQ-color-primary:hover {
-    background-position: right center; /* change the direction of the change here */
+.supabase-ui-auth_ui-button:hover {
+    background-position: right center; 
     color: #fff;
     text-decoration: none;
 }
-.c-dumjqv {
+.supabase-ui-auth_ui-anchor {
   color: #fff !important;
 }
 .top-header h5 {
