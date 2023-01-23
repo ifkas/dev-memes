@@ -423,13 +423,13 @@ form {
   background-color: #000316 !important;
   color: #fff;
 }
-.tr-header .th .td {
+.tr-body .th .td {
   text-align: center;
   background-color: #000316 !important;
   color: #fff;
   font-size: 14px;
 }
-.tr-header .th .td>div {
+.tr-body .th .td>div {
   overflow: visible !important;
 }
 footer {
