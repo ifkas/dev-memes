@@ -98,117 +98,128 @@ const Login = () => {
 	}
 
 	return (
-		<div className='container logged ' style={{ padding: "50px 0 100px 0" }}>
-			<div className={inter.className}>
-				{!session ? (
-					<>
-						<div className='logo'></div>
-						<div className='row'>
-							<div className='six columns text-center'>
-								<Auth
-									supabaseClient={supabase}
-									appearance={{ theme: ThemeSupa }}
-									theme='dark'
-								/>
-							</div>
-						</div>
-					</>
-				) : (
-					<div>
-						<div className='logo'></div>
-						<h5>Hi {user.email}</h5>
-						<button onClick={() => supabase.auth.signOut()}>Sign out</button>
-						{/* Here I want to pass random cool greeting, like Hi email you meme uploader, etc */}
-						{/* <p>Upload new meme here:</p> */}
-						<form>
-							<label htmlFor='upload-meme' className='button'>
-								Upload Meme
-							</label>
-							<input
-								type='file'
-								id='upload-meme'
-								accept='image/png, image/jpg, image/jpeg'
-								onChange={(e) => uploadMeme(e)}
-								style={{ visibility: "hidden" }}
-							/>
-						</form>
-						{/* This will bea table with small thumbnail plus image name and delete button */}
-						{memes.length > 0 ? (
-							<>
-								<h5>All memes:</h5>
-								<Table data={data} pagination={pagination} theme={theme}>
-									{(tableList) => (
-										<>
-											<Header>
-												<HeaderRow>
-													<HeaderCell>Meme</HeaderCell>
-													<HeaderCell>UUID Name</HeaderCell>
-													<HeaderCell>Action</HeaderCell>
-												</HeaderRow>
-											</Header>
-											<Body>
-												{tableList.map((meme) => (
-													<Row key={meme.id} item={meme}>
-														<Cell>
-															{" "}
-															<Image
-																src={CDNmeme + user.id + "/" + meme.name}
-																width={150}
-																height={150}
-																alt={meme.name}
-															/>
-														</Cell>
-														<Cell>{meme.name}</Cell>
-														<Cell>
-															{" "}
-															<button
-																className='btn btn-memes'
-																onClick={() => deleteMeme(meme.name)}
-															>
-																Delete this meme
-															</button>
-														</Cell>
-													</Row>
-												))}
-											</Body>
-										</>
-									)}
-								</Table>
-								<div
-									className='pagination'
-									style={{ display: "flex", justifyContent: "space-between" }}
-								>
-									<span>
-										Total Pages: {pagination.state.getTotalPages(data.nodes)}
-									</span>
-
-									<span className='paginated'>
-										Page:{" "}
-										{pagination.state.getPages(data.nodes).map((_, index) => (
-											<button
-												key={index}
-												type='button'
-												style={{
-													fontWeight:
-														pagination.state.page === index ? "bold" : "normal",
-												}}
-												onClick={() => pagination.fns.onSetPage(index)}
-											>
-												{index + 1}
-											</button>
-										))}
-									</span>
+		<>
+			<div className='container logged ' style={{ padding: "50px 0 100px 0" }}>
+				<div className={inter.className}>
+					{!session ? (
+						<>
+							<div className='logo'></div>
+							<div className='row'>
+								<div className='twelve columns text-center'>
+									<Auth
+										supabaseClient={supabase}
+										appearance={{ theme: ThemeSupa }}
+										theme='dark'
+									/>
 								</div>
-							</>
-						) : (
-							<h4 className='text-center'>
-								You have no memes yet, add some, don&apos;t be shy!
-							</h4>
-						)}
-					</div>
-				)}
+							</div>
+						</>
+					) : (
+						<div>
+							<div className='top-header'>
+								{/* Here I want to pass random cool greeting, like Hi email you meme uploader, etc */}
+								<h5>Hi {user.email}</h5>
+								<button
+									className='sign-out'
+									onClick={() => supabase.auth.signOut()}
+								>
+									Sign out
+								</button>
+							</div>
+							<div className='logo'></div>
+
+							<form>
+								<label htmlFor='upload-meme' className='button'>
+									Upload Meme
+								</label>
+								<input
+									type='file'
+									id='upload-meme'
+									accept='image/png, image/jpg, image/jpeg'
+									onChange={(e) => uploadMeme(e)}
+									style={{ visibility: "hidden" }}
+								/>
+							</form>
+							{/* This will bea table with small thumbnail plus image name and delete button */}
+							{memes.length > 0 ? (
+								<>
+									<h5>All memes:</h5>
+									<Table data={data} pagination={pagination} theme={theme}>
+										{(tableList) => (
+											<>
+												<Header>
+													<HeaderRow>
+														<HeaderCell>Meme</HeaderCell>
+														<HeaderCell>UUID Name</HeaderCell>
+														<HeaderCell>Action</HeaderCell>
+													</HeaderRow>
+												</Header>
+												<Body>
+													{tableList.map((meme) => (
+														<Row key={meme.id} item={meme}>
+															<Cell>
+																{" "}
+																<Image
+																	src={CDNmeme + user.id + "/" + meme.name}
+																	width={150}
+																	height={150}
+																	alt={meme.name}
+																/>
+															</Cell>
+															<Cell>{meme.name}</Cell>
+															<Cell>
+																{" "}
+																<button
+																	className='btn btn-memes'
+																	onClick={() => deleteMeme(meme.name)}
+																>
+																	Delete this meme
+																</button>
+															</Cell>
+														</Row>
+													))}
+												</Body>
+											</>
+										)}
+									</Table>
+									<div
+										className='pagination'
+										style={{ display: "flex", justifyContent: "space-between" }}
+									>
+										<span>
+											Total Pages: {pagination.state.getTotalPages(data.nodes)}
+										</span>
+
+										<span className='paginated'>
+											Page:{" "}
+											{pagination.state.getPages(data.nodes).map((_, index) => (
+												<button
+													key={index}
+													type='button'
+													style={{
+														fontWeight:
+															pagination.state.page === index
+																? "bold"
+																: "normal",
+													}}
+													onClick={() => pagination.fns.onSetPage(index)}
+												>
+													{index + 1}
+												</button>
+											))}
+										</span>
+									</div>
+								</>
+							) : (
+								<h4 className='text-center'>
+									You have no memes yet, add some, don&apos;t be shy!
+								</h4>
+							)}
+						</div>
+					)}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

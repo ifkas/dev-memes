@@ -396,24 +396,6 @@ form {
   display: table;
   clear: both; }
 
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
-
 /* Custom */
 .devmemeslogo {
   background: url(../public/devememes3.jpg) no-repeat center center;
@@ -430,8 +412,8 @@ form {
 }
 .btn-memes {
   color: #fff;
-  background: rgb(250,93,93);
-  background: linear-gradient(0deg, rgba(250,93,93,1) 54%, rgba(250,131,93,1) 100%);
+  /* background: rgb(250,93,93);
+  background: linear-gradient(0deg, rgba(250,131,93,1) 4%,  rgba(250,93,93,1) 100%); */
   border-color: #1C0D7C;
 }
 .css-1kzm8u5-CELL_CONTAINER_STYLE-Cell {
@@ -439,11 +421,12 @@ form {
   background-color: #000316 !important;
   color: #fff;
 }
-.css-uo1l5p-HEADER_CELL_CONTAINER_STYLE-HeaderCell>div:first-child {
+.css-ag01b6-getHeaderRowContainerStyle-HeaderRow .css-uo1l5p-HEADER_CELL_CONTAINER_STYLE-HeaderCell:first-child >div {
   padding-left: 10px;
 }
 .css-uo1l5p-HEADER_CELL_CONTAINER_STYLE-HeaderCell {
-background-color: #8ECAF3 !important;
+  background-color: #000316 !important;
+  color: #fff;
 }
 .css-1kzm8u5-CELL_CONTAINER_STYLE-Cell {
   font-size: 14px;
@@ -463,4 +446,49 @@ footer {
 }
 span.paginated {
   color: #000316;
+}
+#auth-sign-in, #auth-sign-up {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+#auth-sign-in label, #auth-sign-up label { 
+  display: none;
+}
+@media only screen and (max-width: 790px) {
+  .devmemeslogo {
+    height: 300px;
+  }
+}
+.c-kdzhTC-fsSXPQ-color-primary {
+  color: var(--colors-brandButtonText);
+  border-color: var(--colors-brandAccent);
+  background-image: linear-gradient(to right, #e53935 0%, #e35d5b  51%, #e53935  100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+.c-kdzhTC-fsSXPQ-color-primary:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+.c-dumjqv {
+  color: #fff !important;
+}
+.top-header h5 {
+  float: left;
+  font-size: 19px;
+}
+.sign-out {
+  float: right;
+}
+label.button {
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  -webkit-box-shadow:0px 0px 80px 20px rgba(50,7,111,0.9);
+  -moz-box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
+  box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
 }
