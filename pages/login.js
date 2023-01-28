@@ -69,13 +69,12 @@ const Login = () => {
 
 	async function uploadMeme(e) {
 		let meme = e.target.files[0];
+		let memeName = meme.name;
 		// upload only to the folder of the user that actually uploaded the meme
 		// use the user id so we differentiate the memes with the same name, generate random ID
 		const { data, error } = await supabase.storage
 			.from("memes")
-			.upload(user.id + "/" + uuidv4(), meme);
-		// .upload("memess" + "/" + uuidv4(), meme);
-
+			.upload(user.id + "/" + memeName + "dev-memes.com" + uuidv4(), meme);
 		if (data) {
 			getMemes();
 		} else {
