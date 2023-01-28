@@ -30,7 +30,7 @@ export default function Home() {
 			.list("c33a1a4b-e60b-4637-aeba-c329493955b3" + "/", {
 				limit: 300,
 				offset: 0,
-				sortBy: { column: "name", order: "asc" },
+				sortBy: { column: "name", order: "desc" },
 			});
 
 		if (data !== null) {
@@ -97,7 +97,7 @@ export default function Home() {
 				</div>
 			</main>
 			<footer className={inter.className}>
-				Total of {memes.length} kick-ass funny memes.
+				Currently there are total of {memes.length} kick-ass funny memes.
 			</footer>
 		</>
 	);
