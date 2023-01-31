@@ -25,7 +25,7 @@ export default function Home() {
 	// const supabase = supabase();
 	const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 	const memeLink = (id, width, height) =>
-		`https://vvgskppmennronkqbstj.supabase.co/storage/v1/object/public/memes/c33a1a4b-e60b-4637-aeba-c329493955b3/${id}`;
+		`https://vvgskppmennronkqbstj.supabase.co/storage/v1/object/public/memes/38e49d24-a90a-4cf9-9825-602a6c3e1bb7/${id}`;
 	const [index, setIndex] = useState(-1);
 
 	async function getMemes() {
