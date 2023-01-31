@@ -34,7 +34,7 @@ export default function Home() {
 			.list("38e49d24-a90a-4cf9-9825-602a6c3e1bb7" + "/", {
 				limit: 300,
 				offset: 0,
-				sortBy: { column: "name", order: "desc" },
+				sortBy: { column: "name", order: "asc" },
 			});
 
 		if (data !== null) {
