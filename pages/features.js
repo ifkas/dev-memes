@@ -51,12 +51,12 @@ const Features = () => {
 						<li>
 							{" "}
 							<strong className='fp'>Admin page:</strong> User details page, can
-							have it's own avatar, username too.
+							have it&apos;s own avatar, username too.
 						</li>
 						<li>
 							{" "}
 							<strong className='fp'>Admin page:</strong> Each user can have
-							it's own space where all his uploaded memes will show{" "}
+							it&apos;s own space where all his uploaded memes will show{" "}
 							<span className='list-pad'>
 								plus option to list all memes but without delete option for
 								those.
@@ -96,10 +96,10 @@ const Features = () => {
 						<br />
 						<li>
 							{" "}
-							<strong className='ip'>Idea:</strong> Each user can have it's own
-							frontend dedicated page where all his memes are displayed and that
-							can share later on that page with anyone? Like his personal meme
-							page?
+							<strong className='ip'>Idea:</strong> Each user can have it&apos;s
+							own frontend dedicated page where all his memes are displayed and
+							that can share later on that page with anyone? Like his personal
+							meme page?
 						</li>
 					</ul>
 					<p className='text-right'>Ivo Culic - dev-memes.com</p>
