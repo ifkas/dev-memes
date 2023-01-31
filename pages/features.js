@@ -1,0 +1,112 @@
+import { Inconsolata } from "@next/font/google";
+const inconsolata = Inconsolata({
+	weight: ["400"],
+	style: ["normal"],
+	subsets: ["latin"],
+});
+const Features = () => {
+	return (
+		<div className='features container'>
+			<div className={inconsolata.className}>
+				<div className='col col-8'>
+					<h3 className='text-center'>Upcoming features</h3>
+					<h5 className='text-center'>to vers 0.2</h5>
+					<ul>
+						<li>
+							{" "}
+							<strong className='ap'>Front page:</strong> Social sharing of
+							images within the lightbox.
+						</li>
+						<li>
+							{" "}
+							<strong className='ap'>Front page:</strong> Infinite scroll on
+							homepage with lazy loading, fetch new data only when{" "}
+							<span className='list-pad' scrolled>
+								user to bottom.
+							</span>
+						</li>
+						<li>
+							{" "}
+							<strong className='ap'>Front page:</strong> New skin (I will make
+							miami vice syntwave skin - light one, excited). 😀
+						</li>
+						<br />
+						<hr></hr>
+						<br />
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Only one user admin
+							can delete the photos.
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Add notifications
+							after deleting or adding memes (bottom right corner).
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Add alert before
+							deleting meme.
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> User details page, can
+							have it's own avatar, username too.
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Each user can have
+							it's own space where all his uploaded memes will show{" "}
+							<span className='list-pad'>
+								plus option to list all memes but without delete option for
+								those.
+							</span>
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Option to reorder the
+							memes by sortBy.
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Better file upload
+							system with progress bar, like dropzone, etc.
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Custom greeting
+							message for the user.
+						</li>
+						<li>
+							{" "}
+							<strong className='fp'>Admin page:</strong> Search meme by UUID
+							(if needs one meme to be deleted and easy to be found).
+						</li>
+						<br />
+						<hr></hr>
+						<br />
+						<li>
+							{" "}
+							<strong className='gp'>Global:</strong> Better error handling.
+						</li>
+						<li>
+							<strong className='gp'>Global:</strong> Optimization and caching
+							of images (now is option only if Supabase premium plan).
+						</li>
+						<br />
+						<li>
+							{" "}
+							<strong className='ip'>Idea:</strong> Each user can have it's own
+							frontend dedicated page where all his memes are displayed and that
+							can share later on that page with anyone? Like his personal meme
+							page?
+						</li>
+					</ul>
+					<p className='text-right'>Ivo Culic - dev-memes.com</p>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Features;

@@ -1,4 +1,4 @@
-import { Inter } from "@next/font/google";
+import { Inconsolata } from "@next/font/google";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
 	useUser,
@@ -25,7 +25,11 @@ import Image from "next/image";
 const CDNmeme =
 	"https://vvgskppmennronkqbstj.supabase.co/storage/v1/object/public/memes/";
 
-const inter = Inter({ subsets: ["latin"] });
+const inconsolata = Inconsolata({
+	weight: ["400"],
+	style: ["normal"],
+	subsets: ["latin"],
+});
 
 const Login = () => {
 	const theme = useTheme(getTheme());
@@ -97,7 +101,7 @@ const Login = () => {
 	return (
 		<>
 			<div className='container logged ' style={{ padding: "50px 0 100px 0" }}>
-				<div className={inter.className}>
+				<div className={inconsolata.className}>
 					{!session ? (
 						<>
 							<div className='logo'></div>
@@ -140,7 +144,7 @@ const Login = () => {
 							{/* This will bea table with small thumbnail plus image name and delete button */}
 							{memes.length > 0 ? (
 								<>
-									<h5>All memes:</h5>
+									<h4>All memes:</h4>
 									<Table data={data} pagination={pagination} theme={theme}>
 										{(tableList) => (
 											<>

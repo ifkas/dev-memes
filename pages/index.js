@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
+import { Inconsolata } from "@next/font/google";
 // import styles from "@/styles/Home.module.css";
 import React, { useState, useEffect } from "react";
 import PhotoAlbum from "react-photo-album";
@@ -13,7 +13,11 @@ import { supabase } from "../lib/supabase";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 
-const inter = Inter({ subsets: ["latin"] });
+const inconsolata = Inconsolata({
+	weight: ["400"],
+	style: ["normal"],
+	subsets: ["latin"],
+});
 
 export default function Home() {
 	const [memes, setMemes] = useState([]);
@@ -96,8 +100,10 @@ export default function Home() {
 					/>
 				</div>
 			</main>
-			<footer className={inter.className}>
-				Currently there are total of {memes.length} kick-ass funny memes.
+			<footer className={inconsolata.className}>
+				Currently, total of {memes.length} kick-ass funny memes.
+				<br />
+				<a href='https://ivo-culic.medium.com/'>- Ivo Culic -</a>
 			</footer>
 		</>
 	);
