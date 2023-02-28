@@ -10,7 +10,7 @@ const Features = () => {
 			<div className={inconsolata.className}>
 				<div className='col col-8'>
 					<h3 className='text-center'>Upcoming features</h3>
-					<h5 className='text-center'>to vers 0.2</h5>
+					<h5 className='text-center'>in vers 0.2</h5>
 					<ul>
 						<li>
 							{" "}
@@ -36,6 +36,10 @@ const Features = () => {
 								excited).
 							</strike>{" "}
 							😀
+						</li>
+						<li>
+							<strong className='ap'>Front page:</strong>{" "}
+							<strike>Animation smoothing for certain parts</strike>
 						</li>
 						<br />
 						<hr></hr>
