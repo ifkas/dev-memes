@@ -19,16 +19,23 @@ const Features = () => {
 						</li>
 						<li>
 							{" "}
-							<strong className='ap'>Front page:</strong> Infinite scroll on
-							homepage with lazy loading, fetch new data only when{" "}
+							<strong className='ap'>Front page:</strong>{" "}
+							<strike>
+								Infinite scroll on homepage with lazy loading, fetch new data
+								only when{" "}
+							</strike>
 							<span className='list-pad' scrolled>
-								user to bottom.
+								<strike>user to bottom.</strike>
 							</span>
 						</li>
 						<li>
 							{" "}
-							<strong className='ap'>Front page:</strong> New skin (I will make
-							miami vice syntwave skin - light one, excited). 😀
+							<strong className='ap'>Front page:</strong>{" "}
+							<strike>
+								New skin (I will make miami vice syntwave skin - light one,
+								excited).
+							</strike>{" "}
+							😀
 						</li>
 						<br />
 						<hr></hr>

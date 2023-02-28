@@ -84,6 +84,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  transition: background 1s;
 }
 
 a {
@@ -99,7 +100,6 @@ a {
 
 table {
   border-collapse: collapse;
-  /* width: 1000px; */
 }
 
 td, th {
@@ -213,7 +213,10 @@ body {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff; 
   background: #000316;}
-
+body .light {
+  /* background: #2391b3; */
+  background: #3d1430;
+}
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -290,7 +293,6 @@ input[type="button"]:focus {
   -webkit-box-shadow:0px 0px 60px 9px rgba(50,7,111,0.9);
   -moz-box-shadow: 0px 0px 60px 9px rgba(50,7,111,0.9);
   box-shadow: 0px 0px 60px 9px rgba(50,7,111,0.9);}
-.
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -363,6 +365,14 @@ form {
   background: url(../public/devememeslogo9.jpg) no-repeat center center;
   height: 700px;
   background-size: cover;
+  transition: background 1s ease-in;
+}
+
+.light .devmemeslogo {
+  background: url(../public/devememeslogolight2.jpg) no-repeat center center;
+  height: 700px;
+  background-size: cover;
+  transition: background 1s ease-in;
 }
 .logged {
   color: #fff
@@ -509,4 +519,56 @@ label.button {
   padding-left: 130px;
   clear: left;
   display: block;
+}
+.changer {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+strike {
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+}
+.loader{
+  display: block;
+  line-height: 86px;
+  text-align: center;
+  position: relative;
+  padding: 0 48px;
+  font-size: 48px;
+  color: #fff;
+  margin-top: 100px;
+  color: #F2E4ED;
+
+  }
+  .loader:before, .loader:after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: currentColor;
+    position: absolute;
+    animation: load .7s infinite alternate ease-in-out;
+    top: 0;
+  }
+  .loader:after {
+    top: auto;
+    bottom: 0;
+  }
+@keyframes load {
+  0% {
+    left: 0;
+    height: 43px;
+    width: 15px;
+    transform: translateX(0)
+  }
+  50% {
+    height: 10px;
+    width: 40px
+  }
+  100% {
+    left: 100%;
+    height: 43px;
+    width: 15px;
+    transform: translateX(-100%)
+  }
 }

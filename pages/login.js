@@ -40,13 +40,17 @@ const Login = () => {
 	const data = { nodes: memes };
 
 	async function getMemes(pagination) {
-		const { data, error } = await supabase.storage
+		// const { data, error } = await supabase.storage
+		// 	.from("memes")
+		// 	.list(user?.id + "/", {
+		// 		limit: 100,
+		// 		offset: 0,
+		// 		sortBy: { column: "name", order: "asc" },
+		// 	});
+		const { data, error } = await supabase
 			.from("memes")
-			.list(user?.id + "/", {
-				limit: 100,
-				offset: 0,
-				sortBy: { column: "name", order: "asc" },
-			});
+			.select()
+			.order("id", { ascending: true });
 
 		if (data !== null) {
 			setMemes(data);
@@ -74,23 +78,34 @@ const Login = () => {
 	async function uploadMeme(e) {
 		let meme = e.target.files[0];
 		let memeName = meme.name;
+		let uuid = uuidv4();
 		// upload only to the folder of the user that actually uploaded the meme
 		// use the user id so we differentiate the memes with the same name, generate random ID
 		const { data, error } = await supabase.storage
 			.from("memes")
-			.upload(user.id + "/" + memeName + "dev-memes.com" + uuidv4(), meme);
+			.upload(user.id + "/" + memeName + "dev-memes.com" + uuid, meme);
 		if (data) {
+			await supabase.from("memes").insert([
+				{
+					name: memeName,
+					href: user.id + "/" + memeName + "dev-memes.com" + uuid,
+					image_src: user.id + "/" + memeName + "dev-memes.com" + uuid,
+					user_id: user?.id,
+				},
+			]);
 			getMemes();
 		} else {
 			console.log(error);
 		}
 	}
 
-	async function deleteMeme(memeName) {
-		const { error } = await supabase.storage
+	async function deleteMeme(memeName, memeId) {
+		// delete from storage
+		const { data, error } = await supabase.storage
 			.from("memes")
-			.remove([user.id + "/" + memeName]);
-
+			.remove([memeName]);
+		// delete from db
+		await supabase.from("memes").delete().match({ id: memeId });
 		if (error) {
 			alert(error);
 		} else {
@@ -161,7 +176,7 @@ const Login = () => {
 															<Cell>
 																{" "}
 																<Image
-																	src={CDNmeme + user.id + "/" + meme.name}
+																	src={CDNmeme + "/" + meme.image_src}
 																	width={150}
 																	height={150}
 																	alt={meme.name}
@@ -172,7 +187,9 @@ const Login = () => {
 																{" "}
 																<button
 																	className='btn btn-memes'
-																	onClick={() => deleteMeme(meme.name)}
+																	onClick={() =>
+																		deleteMeme(meme.image_src, meme.id)
+																	}
 																>
 																	Delete this meme
 																</button>
