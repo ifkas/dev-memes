@@ -432,11 +432,6 @@ span.paginated {
 #auth-forgot-password label { 
   display: none;
 }
-@media only screen and (max-width: 790px) {
-  .devmemeslogo {
-    height: 300px;
-  }
-}
 .supabase-ui-auth_ui-button {
   color: var(--colors-brandButtonText);
   border-color: var(--colors-brandAccent);
@@ -578,4 +573,17 @@ strike {
   -webkit-box-shadow:0px 0px 80px 20px rgba(50,7,111,0.9);
   -moz-box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
   box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
+}
+@media only screen and (max-width: 790px) {
+  .devmemeslogo,
+  .light .devmemeslogo {
+    height: 320px;
+  }
+  .changer {
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 150px;
+    margin: 0 auto;
+  }
 }
