@@ -20,6 +20,7 @@ import { usePagination } from "@table-library/react-table-library/pagination";
 import { useTheme } from "@table-library/react-table-library/theme";
 import { getTheme } from "@table-library/react-table-library/baseline";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 // URL of the CDN + user.id + uuid image name
 const CDNmeme =
@@ -93,6 +94,17 @@ const Login = () => {
 					user_id: user?.id,
 				},
 			]);
+			toast.success("Meme uploaded successfully", {
+				position: "top-right",
+				autoClose: 5000,
+				hideProgressBar: true,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: false,
+				progress: 0,
+				theme: "colored",
+			});
+
 			getMemes();
 		} else {
 			console.log(error);
@@ -106,6 +118,18 @@ const Login = () => {
 			.remove([memeName]);
 		// delete from db
 		await supabase.from("memes").delete().match({ id: memeId });
+		if (data) {
+			toast.success("Meme deleted successfully", {
+				position: "top-right",
+				autoClose: 5000,
+				hideProgressBar: true,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: false,
+				progress: 0,
+				theme: "colored",
+			});
+		}
 		if (error) {
 			alert(error);
 		} else {

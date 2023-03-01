@@ -572,3 +572,10 @@ strike {
     transform: translateX(-100%)
   }
 }
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  /* background: #FC5B4D !important; */
+  background: #1A0545 !important;
+  -webkit-box-shadow:0px 0px 80px 20px rgba(50,7,111,0.9);
+  -moz-box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
+  box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
+}
