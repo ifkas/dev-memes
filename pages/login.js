@@ -88,7 +88,7 @@ const Login = () => {
 		if (data) {
 			await supabase.from("memes").insert([
 				{
-					name: memeName,
+					name: memeName + "-" + uuid,
 					href: user.id + "/" + memeName + "dev-memes.com" + uuid,
 					image_src: user.id + "/" + memeName + "dev-memes.com" + uuid,
 					user_id: user?.id,
