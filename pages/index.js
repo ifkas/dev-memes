@@ -117,18 +117,20 @@ export default function Home() {
 					</button>
 				</header>
 				<main>
-					<div>
+					<div className={inconsolata.className}>
 						<InfiniteScroll
 							dataLength={memes.length}
 							next={() => {
 								getMemes(memes.length);
 							}}
 							hasMore={more}
-							loader={<h4 className={`loader`}>Loading...</h4>}
+							loader={
+								<h4 className={`loader __className_1e0407`}>Loading...</h4>
+							}
 							endMessage={
 								<h4
-									className={`defaultClassName`}
-									style={{ textAlign: "center" }}
+									className={`__className_1e0407`}
+									style={{ textAlign: "center", marginTop: "50px" }}
 								>
 									Yay! You have seen all of the memes! Come back later for more!
 								</h4>

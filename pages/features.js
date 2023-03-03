@@ -108,8 +108,8 @@ const Features = () => {
 							<strike>Better error handling.</strike>
 						</li>
 						<li>
-							<strong className='gp'>Global:</strong> Optimization and caching
-							of images (now is option only if Supabase premium plan).
+							<strong className='gp'>Global:</strong>{" "}
+							<strike>Optimization and caching of images.</strike>
 						</li>
 						<br />
 						<li>
