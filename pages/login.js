@@ -38,9 +38,21 @@ const Login = () => {
 	const supabase = useSupabaseClient();
 	const user = useUser();
 	const [memes, setMemes] = useState([]);
-	const data = { nodes: memes };
+	// const data = { nodes: memes };
+	const [search, setSearch] = useState("");
+
+	const handleSearch = (event) => {
+		setSearch(event.target.value);
+	};
+
+	const data = {
+		nodes: memes.filter((item) =>
+			item.name.toLowerCase().includes(search.toLowerCase())
+		),
+	};
 
 	async function getMemes(pagination) {
+		// Leave this commented, it's just for case if I need to switch to the storage API
 		// const { data, error } = await supabase.storage
 		// 	.from("memes")
 		// 	.list(user?.id + "/", {
@@ -168,7 +180,7 @@ const Login = () => {
 							</div>
 							<div className='logo'></div>
 
-							<form>
+							<form className='file-upload'>
 								<label htmlFor='upload-meme' className='button'>
 									Upload Meme
 								</label>
@@ -183,7 +195,22 @@ const Login = () => {
 							{/* This will bea table with small thumbnail plus image name and delete button */}
 							{memes.length > 0 ? (
 								<>
-									<h4>All memes:</h4>
+									<div className='row'>
+										<div className='six columns'>
+											<h4>All memes:</h4>
+										</div>
+										<div className='six columns u-pull-right'>
+											<label htmlFor='search'>
+												Search by UUID:&nbsp;&nbsp;
+												<input
+													id='search'
+													type='text'
+													value={search}
+													onChange={handleSearch}
+												/>
+											</label>
+										</div>
+									</div>
 									<Table data={data} pagination={pagination} theme={theme}>
 										{(tableList) => (
 											<>

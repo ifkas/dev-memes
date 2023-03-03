@@ -382,6 +382,9 @@ form {
   height: 196px;
   background-size: contain;
 }
+.file-upload {
+  margin-bottom: 50px;
+}
 .btn-memes {
   color: #fff;
   /* background: rgb(250,93,93);
@@ -451,8 +454,15 @@ span.paginated {
   float: left;
   font-size: 19px;
 }
-.sign-out {
-  float: right;
+.sign-out,
+.u-pull-right,
+input#search {
+  float: right !important;
+}
+.u-pull-right label {
+  text-align: right;
+  display: block;
+  line-height: 30px;
 }
 label.button {
   display: block;
@@ -464,6 +474,9 @@ label.button {
   -webkit-box-shadow:0px 0px 80px 20px rgba(50,7,111,0.9);
   -moz-box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
   box-shadow: 0px 0px 80px 20px rgba(50,7,111,0.9);
+}
+input {
+  padding: 6px;
 }
 
 /* Features */

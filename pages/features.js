@@ -51,8 +51,11 @@ const Features = () => {
 						</li>
 						<li>
 							{" "}
-							<strong className='fp'>Admin page:</strong> Add notifications
-							after deleting or adding memes (bottom right corner).
+							<strong className='fp'>Admin page:</strong>{" "}
+							<strike>
+								Add notifications after deleting or adding memes (bottom right
+								corner).
+							</strike>
 						</li>
 						<li>
 							{" "}
@@ -90,15 +93,19 @@ const Features = () => {
 						</li>
 						<li>
 							{" "}
-							<strong className='fp'>Admin page:</strong> Search meme by UUID
-							(if needs one meme to be deleted and easy to be found).
+							<strong className='fp'>Admin page:</strong>{" "}
+							<strike>
+								Search meme by UUID (if needs one meme to be deleted and easy to
+								be found).
+							</strike>
 						</li>
 						<br />
 						<hr></hr>
 						<br />
 						<li>
 							{" "}
-							<strong className='gp'>Global:</strong> Better error handling.
+							<strong className='gp'>Global:</strong>{" "}
+							<strike>Better error handling.</strike>
 						</li>
 						<li>
 							<strong className='gp'>Global:</strong> Optimization and caching
