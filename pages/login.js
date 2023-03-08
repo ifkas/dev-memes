@@ -81,7 +81,7 @@ const Login = () => {
 	const pagination = usePagination(data, {
 		state: {
 			page: 0,
-			size: 14,
+			size: 20,
 		},
 	});
 
@@ -260,7 +260,7 @@ const Login = () => {
 										</span>
 
 										<span className='paginated'>
-											Page:{" "}
+											{" "}
 											{pagination.state.getPages(data.nodes).map((_, index) => (
 												<button
 													key={index}

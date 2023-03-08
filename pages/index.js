@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inconsolata } from "@next/font/google";
 // import styles from "@/styles/Home.module.css";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import PhotoAlbum from "react-photo-album";
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -63,7 +63,7 @@ export default function Home() {
 		if (data !== null) {
 			setTimeout(() => {
 				setMemes(data);
-			}, 1000);
+			}, 2000);
 		} else {
 			alert("Error loading memes");
 		}
@@ -154,7 +154,15 @@ export default function Home() {
 					</div>
 				</main>
 				<footer className={inconsolata.className}>
-					Currently, total of {total} kick-ass funny memes.
+					{memes.length === total ? (
+						<p> Currently, total of {total} kick-ass funny memes.</p>
+					) : (
+						<p>
+							{" "}
+							Currently showing {memes.length} of total {total} kick-ass funny
+							memes.
+						</p>
+					)}
 					<br />
 					<a href='https://ivo-culic.medium.com/'>- Ivo Culic -</a>
 				</footer>
