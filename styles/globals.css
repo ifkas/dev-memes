@@ -417,6 +417,9 @@ footer {
   background: #370746;
   text-align: center;
 }
+footer p {
+  margin-bottom: 5px;
+}
 .text-center {
   text-align: center;
 }

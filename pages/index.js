@@ -163,7 +163,6 @@ export default function Home() {
 							memes.
 						</p>
 					)}
-					<br />
 					<a href='https://ivo-culic.medium.com/'>- Ivo Culic -</a>
 				</footer>
 			</div>
